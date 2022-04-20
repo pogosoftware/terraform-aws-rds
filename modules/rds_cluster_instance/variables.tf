@@ -17,7 +17,7 @@ variable "instance_class" {
 }
 
 variable "number_of_instances" {
-  default     = 0
+  default     = 1
   description = "Number od RDS cluster instance to create"
   type        = number
 }
@@ -25,6 +25,12 @@ variable "number_of_instances" {
 ##########################################################################
 ### OPTIONAL
 ##########################################################################
+variable "create" {
+  description = "Whether to create this resource or not?"
+  type        = bool
+  default     = true
+}
+
 variable "engine" {
   default     = "aurora"
   description = " The name of the database engine to be used for this DB cluster. Defaults to `aurora`. Valid Values: `aurora`, `aurora-mysql`, `aurora-postgresql`, `mysql`, `postgres`. (Note that mysql and postgres are Multi-AZ RDS clusters)"

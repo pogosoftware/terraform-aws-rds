@@ -1,5 +1,5 @@
 resource "aws_rds_cluster_instance" "this" {
-  count = var.number_of_instances
+  count = var.create ? var.number_of_instances : 0
 
   identifier                            = local.identifier
   identifier_prefix                     = local.identifier_prefix
