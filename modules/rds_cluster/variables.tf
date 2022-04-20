@@ -44,7 +44,7 @@ variable "apply_immediately" {
 }
 
 variable "availability_zones" {
-  default     = null
+  default     = []
   description = "A list of EC2 Availability Zones for the DB cluster storage where DB cluster instances can be created. RDS automatically assigns 3 AZs if less than 3 AZs are configured, which will show as a difference requiring resource recreation next Terraform apply"
   type        = list(string)
 }
