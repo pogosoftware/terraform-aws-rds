@@ -6,7 +6,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 4.10.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.10 |
 
 ## Providers
 
@@ -22,7 +22,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_db_parameter_group.this](https://registry.terraform.io/providers/hashicorp/aws/4.10.0/docs/resources/db_parameter_group) | resource |
+| [aws_db_parameter_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_parameter_group) | resource |
 
 ## Inputs
 
