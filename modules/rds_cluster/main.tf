@@ -41,6 +41,12 @@ resource "aws_rds_cluster" "this" {
   storage_encrypted                   = var.storage_encrypted
   vpc_security_group_ids              = var.vpc_security_group_ids
 
+  timeouts {
+    create = lookup(var.cluster_timeouts, "create", null)
+    update = lookup(var.cluster_timeouts, "update", null)
+    delete = lookup(var.cluster_timeouts, "delete", null)
+  }
+
   dynamic "scaling_configuration" {
     for_each = length(keys(var.scaling_configuration)) == 0 || !local.is_serverless ? [] : [var.scaling_configuration]
 
