@@ -61,6 +61,12 @@ variable "backup_retention_period" {
   type        = number
 }
 
+variable "cluster_timeouts" {
+  description = "Create, update, and delete timeout configurations for the cluster"
+  type        = map(string)
+  default     = {}
+}
+
 variable "copy_tags_to_snapshot" {
   default     = false
   description = "Copy all Cluster `tags` to snapshots"
