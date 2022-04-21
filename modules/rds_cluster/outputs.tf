@@ -58,6 +58,11 @@ output "engine" {
   value       = try(aws_rds_cluster.this[0].engine, "")
 }
 
+output "engine_version" {
+  description = "The running version of the database"
+  value       = try(aws_rds_cluster.this[0].engine_version, "")
+}
+
 output "engine_version_actual" {
   description = "The running version of the database"
   value       = try(aws_rds_cluster.this[0].engine_version_actual, "")

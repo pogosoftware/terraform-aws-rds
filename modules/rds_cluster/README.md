@@ -102,6 +102,7 @@ No modules.
 | <a name="output_database_name"></a> [database\_name](#output\_database\_name) | The database name |
 | <a name="output_endpoint"></a> [endpoint](#output\_endpoint) | The DNS address of the RDS instance |
 | <a name="output_engine"></a> [engine](#output\_engine) | The database engine |
+| <a name="output_engine_version"></a> [engine\_version](#output\_engine\_version) | The running version of the database |
 | <a name="output_engine_version_actual"></a> [engine\_version\_actual](#output\_engine\_version\_actual) | The running version of the database |
 | <a name="output_hosted_zone_id"></a> [hosted\_zone\_id](#output\_hosted\_zone\_id) | The Route53 Hosted Zone ID of the endpoint |
 | <a name="output_id"></a> [id](#output\_id) | The RDS Cluster Identifier |
