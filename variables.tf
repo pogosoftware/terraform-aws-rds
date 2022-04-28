@@ -173,7 +173,7 @@ variable "apply_immediately" {
 }
 
 variable "availability_zones" {
-  default     = []
+  default     = null
   description = "A list of EC2 Availability Zones for the DB cluster storage where DB cluster instances can be created. RDS automatically assigns 3 AZs if less than 3 AZs are configured, which will show as a difference requiring resource recreation next Terraform apply"
   type        = list(string)
 }
@@ -359,8 +359,8 @@ variable "source_region" {
 }
 
 variable "storage_type" {
-  default     = "io1"
-  description = "Specifies the storage type to be associated with the DB cluster. (This setting is required to create a Multi-AZ DB cluster). Valid values: `io1`, Default: `io1`"
+  default     = null
+  description = "Specifies the storage type to be associated with the DB cluster. (This setting is required to create a Multi-AZ DB cluster). Valid values: `io1`"
   type        = string
 }
 
