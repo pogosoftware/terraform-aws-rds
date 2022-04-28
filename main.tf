@@ -57,9 +57,9 @@ module "rds_cluster" {
   cluster_timeouts                    = var.cluster_timeouts
   copy_tags_to_snapshot               = var.copy_tags_to_snapshot
   database_name                       = var.database_name
-  db_cluster_parameter_group_name     = var.db_cluster_parameter_group_name
+  db_cluster_parameter_group_name     = local.db_cluster_parameter_group_name
   db_instance_parameter_group_name    = var.db_instance_parameter_group_name
-  db_subnet_group_name                = var.db_subnet_group_name
+  db_subnet_group_name                = local.db_subnet_group_name
   deletion_protection                 = var.deletion_protection
   enable_http_endpoint                = var.enable_http_endpoint
   enabled_cloudwatch_logs_exports     = var.enabled_cloudwatch_logs_exports
@@ -104,8 +104,8 @@ module "rds_cluster_instance" {
   engine                                = lookup(each.value, "engine", module.rds_cluster.engine)
   engine_version                        = lookup(each.value, "engine_version", module.rds_cluster.engine_version)
   publicly_accessible                   = lookup(each.value, "publicly_accessible", false)
-  db_subnet_group_name                  = lookup(each.value, "db_subnet_group_name", var.db_subnet_group_name)
-  db_parameter_group_name               = lookup(each.value, "db_parameter_group_name", var.db_parameter_group_name)
+  db_subnet_group_name                  = lookup(each.value, "db_subnet_group_name", local.db_subnet_group_name)
+  db_parameter_group_name               = lookup(each.value, "db_parameter_group_name", local.db_parameter_group_name)
   apply_immediately                     = lookup(each.value, "apply_immediately", false)
   monitoring_role_arn                   = lookup(each.value, "monitoring_role_arn", null)
   monitoring_interval                   = lookup(each.value, "monitoring_interval", 0)
